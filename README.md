@@ -9,3 +9,4 @@ Currently completing Stage 3: NLP and tansfomers.
 - 03: Breast Cancer Detection (Classification)
 - 04: Neural Network Banknote Classifier (Deep Learning)
 - 05: MNIST Digit Recognition (Computer Vision - CNN)
+- 06 Sentiment analysis (NLP and Transformers)

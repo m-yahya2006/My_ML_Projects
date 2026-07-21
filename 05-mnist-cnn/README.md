@@ -1,4 +1,4 @@
-# Project 4: MNIST_CNN
+# Project 5: MNIST_CNN
 
 ## Project Overview
 This project contain 70,000 images that are divided into 10 classes. Because the dataset is quite big, I have divided the training data into batch size of 32. 
