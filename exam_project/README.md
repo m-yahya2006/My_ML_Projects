@@ -46,6 +46,7 @@ The models did not achieve higher accuracy because:
 - scikit-learn
 - pandas
 - NumPy
+- StandardScaler (Feature Scaling)
 
 ## How to Run
 
