@@ -10,3 +10,4 @@ Currently completing Stage 4: MLOps.
 - 04: Neural Network Banknote Classifier (Deep Learning)
 - 05: MNIST Digit Recognition (Computer Vision - CNN)
 - 06 Sentiment analysis NLP (Transformers + Fine-tuning)
+- EXAM Project (Classical models + Deep learning)
