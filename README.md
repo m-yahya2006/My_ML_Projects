@@ -1,7 +1,7 @@
 # ML Portfolio — Muhammad Yahya
 
 Structured ML engineering curriculum.
-Currently completing Stage 4: MLOps.
+Currently completing Stage 6 Research Engineering .
 
 ## Projects
 - 01: College Majors Salary Prediction (Regression)
@@ -9,5 +9,7 @@ Currently completing Stage 4: MLOps.
 - 03: Breast Cancer Detection (Classification)
 - 04: Neural Network Banknote Classifier (Deep Learning)
 - 05: MNIST Digit Recognition (Computer Vision - CNN)
-- 06 Sentiment analysis NLP (Transformers + Fine-tuning)
+- 06: Sentiment analysis NLP (Transformers + Fine-tuning)
 - EXAM Project (Classical models + Deep learning)
+- 07: MLFLOW Tracking (MLOps)
+- 08: Predict API (FastAPI)
