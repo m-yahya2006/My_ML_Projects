@@ -10,7 +10,7 @@ test_data = datasets.CIFAR10(root="data", train=False, download=True, transform=
 #print(image.shape)
 
 train_dataloader = DataLoader(train_data, batch_size=64, shuffle=True)
-test_dataloader = DataLoader(test_data, batch_size=64, shuffle=True)
+test_dataloader = DataLoader(test_data, batch_size=64, shuffle=False)
 
 class CNN(nn.Module):
     def __init__(self):
@@ -18,7 +18,7 @@ class CNN(nn.Module):
         self.conv1 = nn.Conv2d(3, 32, kernel_size=3 , padding=1 )
         self.conv2 = nn.Conv2d(32, 64, kernel_size=3 , padding=1 )
         self.conv3 = nn.Conv2d(64, 32, kernel_size=3 , padding=1 )
-        self.Droupout = nn.Dropout(0.5)
+        self.dropout = nn.Dropout(0.5)
         self.pool = nn.MaxPool2d(2,2)
         self.fc1 = nn.Linear(32 * 4 * 4 , 10)
 
@@ -27,13 +27,13 @@ class CNN(nn.Module):
         x = self.pool(torch.relu(self.conv2(x)))
         x = self.pool(torch.relu(self.conv3(x)))
         x = x.view(-1 , 32 * 4 * 4)
-        x= self.Droupout(x)
+        x= self.dropout(x)
         x= self.fc1(x)
         return x
 
 model = CNN()
 loss_fn= nn.CrossEntropyLoss()
-optim = torch.optim.Adam(model.parameters() ,lr = 0.01)
+optim = torch.optim.Adam(model.parameters() ,lr = 0.001)
 
 epochs = 100
 
@@ -47,8 +47,10 @@ for epoch in range(epochs):
         loss.backward()
         optim.step()
 
-        total_loss+=loss
-    print(f"epoch: {epoch}, Loss: {total_loss/len(train_dataloader)}")
+        total_loss+=loss.item()
+    if epoch%10==0:
+        average_loss=total_loss/len(train_dataloader)
+        print(f"epoch: {epoch}, Loss: {average_loss}")
 
 
 with torch.no_grad():
@@ -57,9 +59,9 @@ with torch.no_grad():
     model.eval()
     for images , labels in test_dataloader:
         output = model(images)
-        ourput = torch.argmax(output , dim=1)
+        prediction = torch.argmax(output , dim=1)
 
-        correct += (output==labels).sum().item()
+        correct += (prediction==labels).sum().item()
         total += labels.size(0)
 
     print(f"Accuracy: {correct/total}")
