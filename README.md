@@ -1,7 +1,7 @@
 # ML Portfolio — Muhammad Yahya
 
 Structured ML engineering curriculum.
-Currently completing Stage 6 Research Engineering .
+Currently completing Stage 8 Interview Prep .
 
 ## Projects
 - 01: College Majors Salary Prediction (Regression)
@@ -13,3 +13,5 @@ Currently completing Stage 6 Research Engineering .
 - EXAM Project (Classical models + Deep learning)
 - 07: MLFLOW Tracking (MLOps)
 - 08: Predict API (FastAPI)
+- 09: ML Research Engineering 
+- 10: RAG system 
